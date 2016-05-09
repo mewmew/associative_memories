@@ -1,0 +1,138 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{preamble}
+
+% TODO: Decide who focuses on which parts. There will of course be overlap and
+% we will all review and discuss the different sections.
+
+\title{Models of Associative Memory}
+
+\author{Wenting Jin, Lucas Arnström \& Robin Eklind}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\clearpage
+
+% TODO: Add abstract?
+
+% === [ Introduction ] =========================================================
+
+\section{Introduction}
+
+\subsection{Associative Memory}
+
+Defintion of associative memory.
+
+Distinction between auto-associative and hetro-associative memory.
+
+% === [ Models of Associative Memory ] =========================================
+
+\section{Models of Associative Memory}
+
+\subsection{Hopfield Networks}
+
+Mostly auto-associative. Also hetro-associative?
+
+\subsection{Bidirection Associative Memory}
+
+Mostly hetro-associative. Also auto-associative.
+
+\subsection{Boltzman}
+
+foo
+
+% TODO: Check wiki.
+
+\subsection{Hamming networks}
+
+foo
+
+% TODO: Decide whether to include Hamming networks or not.
+
+\subsection{Memory Resistor}
+
+foo
+
+% === [ Current Capabilities ] =================================================
+
+\section{Current Capabilities}
+
+Definitions of capacity.
+
+\begin{itemize}
+\item Absolute capacity.
+\item Relative capacity.
+\item Capacity of associative memory
+\item Relative capacity of recalling process
+\end{itemize}
+
+\subsection{Hopfield Network}
+
+1982, $0.15n$ (capacity of associative memory)
+
+1985, proven $ \frac{n}{2\log{n}} $ (absolute capacity)
+
+1985, $0.14n$ (relative capacity of recalling process)
+
+1993, $ n ~= 0.4n $ (new result, absolute capacity)
+
+\subsection{Bidirection Associative Memory}
+
+% TODO: Check.
+
+foo
+
+\subsection{Boltzman}
+
+Pure Boltzman does not scale, thus impractical.
+
+Restricted Boltzman, basis for deep learning today, using multiple layers.
+
+\subsection{Memory Resistor}
+
+Proof of concept in 2010, using 3 neurons and 2 synapses to achieve 1 associative memory formation.
+
+% === [ Future Potential ] =====================================================
+
+\section{Future Potential}
+
+\subsection{Intelligent Systems}
+
+Intelligence defined by ability to make predictions, not behaviour \cite{intelligence_is_prediction}.
+
+\subsection{Energy Efficiency}
+
+Network in its true sense, \textit{the net is doing all the work} \cite{net_doing_all_the_work}.
+
+%Current computer architectures are designed around major bottlenecks, huge amounts of data has to be shuffled back and forth to perform computations. Reaching its limits; transistors now so small that they only allow a single electron to pass through (similar in size to the ion channels). At this scale, problems arise when transistors may allow electrons to pass through, when they shouldn't and wise versa; which leads to unpredictable behaviour (small bursts of ones when should be be all zero, and wise versa.)
+
+%The brain, parallel, error correcting, memory efficient. (not doing a lot of unnecessary data shuffling?)
+
+% === [ Conclusion ] ===========================================================
+
+\section{Conclusion}
+
+foo
+
+% === [ Research Literature ] ==================================================
+
+Preliminary list of references, cited to force inclusion within the bibliography.
+
+% TODO: Add to this list throughout the project.
+
+% Wenting
+\cite{computational_abilities} \cite{optical_processing} \cite{capacity_of_nonmonotonic_model} \cite{stimulus_unitization_and_aging}
+
+% Lucas
+\cite{capacity_of_hopfield} \cite{high-order_neural_networks} \cite{neural_network_models_for_associative_memory} \cite{sparsely_encoded_associative_memory}
+
+% Robin
+\cite{memsistor} \cite{principle_of_neural_associative_memory} \cite{parallel_models_of_associative_memory} \cite{associative_memory_using_small-world_architecture} \cite{associatron} \cite{associative_search_network} \cite{deep_machine_learning} \cite{on_associative_memory} \cite{from_cell_to_cortex}
+
+\bibliography{references}
+
+\end{document}
