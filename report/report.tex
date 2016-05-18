@@ -57,13 +57,13 @@ Mostly hetero-associative. Also auto-associative.
 
 %TODO The language in this section is horrible!!!
 
-The "Boltzmann Machine" (BM) is a form of "parallel constraint satisfaction network" \cite{ackley1985learning}. It is capable of learning the underlying constraints of a domain by only being shown examples of it. It is very similar to the Hopfield network as it also defines a global energy of the network. The equation that defines the global energy of the machine is identical to that of the Hopfield network.
+The "Boltzmann Machine" (BM) is a form of "parallel constraint satisfaction network" \cite{ackley1985learning}. It is capable of learning the underlying constraints of a domain by only being shown examples of it. The BM is notably similar to the Hopfield network as it also defines a global energy of the network using the same equation. The BM strives to minimize the global energy of the system. Because of this deterministic algorithm it suffers from the usual weaknesses of gradient descent algorithms, namely it gets stuck in local minima. In order to alleviate the algorithm of this problem noise is introduced in the training. This allows the network to "jump" out of these minima into configurations of higher energy. The algorithm used for noise introduction is a variation of the "Metropolis algorithm" \cite{metropolis1953equation} (used for study of thermodynamic systems) designed for parallel computation.
 
-The difference between the two networks are that the nodes of a Boltzmann Machine are stochastic in their nature.
+The difference between the BM and the Hopfield network is mainly that the nodes (or units as they are referred to in the original paper) of the Boltzmann Machine are stochastic by nature.
 
-The BM can be used for constraint satisfaction problems that involve a large amount of weak constraints.
+%The BM can be used for constraint satisfaction problems that involve a large amount of weak constraints.
 
-The BM is composed of binary nodes, that is, the nodes are either in an off state or an on state. The nodes get their states determined by a probabilistic function based on the states of their neighbors; where a neighbor is an other node connected by bidirectional connection with a symmetric weight. That is, the connection has a weight that is identical in either direction.
+%The BM is composed of binary nodes, that is, the nodes are either in an off state or an on state. The nodes get their states determined by a probabilistic function based on the states of their neighbors; where a neighbor is an other node connected by bidirectional connection with a symmetric weight. That is, the connection has a weight that is identical in either direction.
 
 %\subsection{Hamming networks}
 
