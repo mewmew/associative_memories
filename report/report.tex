@@ -37,7 +37,13 @@ Distinction between auto-associative and hetro-associative memory.
 
 \subsection{Hopfield Networks}
 
-Wenting.
+% Wenting.
+
+In paper from J.J.Hopfield [1982], the drawbacks of Perceptron were addressed through its intractable back-coupling, lack of abstraction properties and requirement of synchrony. Information storage was improved with help of Nonlinearity, and emergent computational properties were obtained from simple properties of many cells rather than complex circuitry(which is a result of linear associativity). The input-output relationship of nonlinear computation and binary threshold units were introduced.
+
+Collective behaviors of the model was studied and resulted with the following findings: a few stable states was resulted from most of the initial state space, properties necessary for a physical content-addressable memory were not dependent on the symmetry of the connectivity matrix $T_i_j$. Statement supported by findings from experiments is that "about 0.15N(memory storage bits) states can be simultaneously remembered before error in recall is severe". Case with arbitrary starting state was studied and results of memories near to the starting state was highly produced. The nominally assigned memories which were called "attractors" dominates the phase flow whereas the flow is not entirely deterministic, which leads to a convergence to local optimum.
+
+Case of consistent internal correlations in the memory was as well adressed, and Hebb synaspses was used and slightly modified to generate nonsymmetric term~$\delta T_i_j$, which limitation of sequence of four states was addressed.
 
 Mostly auto-associative. Also hetro-associative?
 
@@ -45,13 +51,11 @@ Mostly auto-associative. Also hetro-associative?
 
 Mostly hetro-associative. Also auto-associative.
 
-\subsection{Boltzman}
+\subsection{Boltzmann Machine}
 
-Lucas.
+% Lucas.
 
-foo
-
-% TODO: Check wiki.
+The "Boltzmann Machine" is a form of "parallel constraint satisfaction network" \cite{ackley1985learning}. It is capable of learning the underlying constraints of a domain by only being shown examples of it.
 
 %\subsection{Hamming networks}
 
@@ -98,7 +102,7 @@ Wenting.
 
 foo
 
-\subsection{Boltzman}
+\subsection{Boltzmann Machine}
 
 Lucas.
 
@@ -144,7 +148,7 @@ Preliminary list of references, cited to force inclusion within the bibliography
 \cite{computational_abilities} \cite{optical_processing} \cite{capacity_of_nonmonotonic_model} \cite{stimulus_unitization_and_aging}
 
 % Lucas
-\cite{capacity_of_hopfield} \cite{high-order_neural_networks} \cite{neural_network_models_for_associative_memory} \cite{sparsely_encoded_associative_memory}
+\cite{ackley1985learning} \cite{capacity_of_hopfield} \cite{high-order_neural_networks} \cite{neural_network_models_for_associative_memory} \cite{sparsely_encoded_associative_memory}
 
 % Robin
 \cite{memsistor} \cite{principle_of_neural_associative_memory} \cite{parallel_models_of_associative_memory} \cite{associative_memory_using_small-world_architecture} \cite{associatron} \cite{associative_search_network} \cite{deep_machine_learning} \cite{on_associative_memory} \cite{from_cell_to_cortex}
