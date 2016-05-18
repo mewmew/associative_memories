@@ -45,17 +45,23 @@ Collective behaviors of the model was studied and resulted with the following fi
 
 Case of consistent internal correlations in the memory was as well adressed, and Hebb synaspses was used and slightly modified to generate nonsymmetric term~$\delta T_{ij}$, which limitation of sequence of four states was addressed.
 
-Mostly auto-associative. Also hetro-associative?
+Mostly auto-associative. Also hetero-associative?
 
-\subsection{Bidirection Associative Memory}
+\subsection{Bidirectional Associative Memory}
 
-Mostly hetro-associative. Also auto-associative.
+Mostly hetero-associative. Also auto-associative.
 
 \subsection{Boltzmann Machine}
 
-% Lucas.
+%TODO The language in this section is horrible!!!
 
-The "Boltzmann Machine" is a form of "parallel constraint satisfaction network" \cite{ackley1985learning}. It is capable of learning the underlying constraints of a domain by only being shown examples of it.
+The "Boltzmann Machine" (BM) is a form of "parallel constraint satisfaction network" \cite{ackley1985learning}. It is capable of learning the underlying constraints of a domain by only being shown examples of it. It is very similar to the Hopfield network as it also defines a global energy of the network. The equation that defines the global energy of the machine is identical to that of the Hopfield network.
+
+The difference between the two networks are that the nodes of a Boltzmann Machine are stochastic in their nature.
+
+The BM can be used for constraint satisfaction problems that involve a large amount of weak constraints.
+
+The BM is composed of binary nodes, that is, the nodes are either in an off state or an on state. The nodes get their states determined by a probabilistic function based on the states of their neighbors; where a neighbor is an other node connected by bidirectional connection with a symmetric weight. That is, the connection has a weight that is identical in either direction.
 
 %\subsection{Hamming networks}
 
