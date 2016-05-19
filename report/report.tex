@@ -86,7 +86,29 @@ Training is conducted in two phases, the first is called the "positive" phase we
 
 Memory resistors, memsistors for short, are passive circuits which change their resistance as current flows through them, and maintain their resistance in between use. In other words, memsistors remember past flows of current (i.e. store state), and control resistance based on this knowledge (i.e. stored state). Several similarities have been identified bewteen the properties of memsistors and synapses, which make them interesting candidates for associative memory models.
 
-\cite{memsistor} \cite{ahah}
+TODO: Extend. Artificial synapses experiment using memsistors conducted in 2010, empiricially validating the formation of associative memories using three neurons and two synapses \cite{memristor_conditioning}.
+
+TODO: Extend. The memsistor was hyphosized in 1972 by Leon Chua, the father of non-linear curcuit theory, who presented it as the missing fundamental cirtuit element (see figure \ref{fig:circuit_elements}) \cite{chua_memristor}. Looking at the current~$I$ and voltage~$V$ plot, a memsistor may be identified by the pinched hysteresis loop going through origo (see figure \ref{fig:pinched_hysteresis}. TODO: Explain the underlying reason of the hysteresis loop, i.e. alterating between two states (metastable switch).
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{inc/circuit_elements.png}
+		\caption{Fundamental circuit elements.\protect\footnotemark}
+		\label{fig:circuit_elements}
+	\end{center}
+\end{figure}
+\footnotetext{Original image (CC BY-SA): \url{https://en.wikipedia.org/wiki/File:Two-terminal_non-linear_circuit_elements.svg}}
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{inc/pinched_hysteresis.png}
+		\caption{A pinched hysteresis loop plotted on an IV-curve.\protect\footnotemark}
+		\label{fig:pinched_hysteresis}
+	\end{center}
+\end{figure}
+\footnotetext{Original image (CC BY-SA): \url{https://en.wikipedia.org/wiki/File:Pinched_crossing_hysteresis.png}}
+
+TODO: Extend. In 2008, HP released a paper titled \textit{The missing memristor found}, which outlined the hardware implementation of a memsistor \cite{hp_memristor_found}, thus validating the existence of the hypothesized memsistors circuit element. Retrospectively, several research groups had discovered circuits with the tell-tale properties of memsistor, i.e. with a pinched hysteresis loop. TODO: Include ref about prior research, before 2008.
 
 % === [ Current Capabilities ] =================================================
 
@@ -145,6 +167,8 @@ Intelligence defined by ability to make predictions, not behaviour \cite{intelli
 \subsection{Energy Efficiency}
 
 Network in its true sense, \textit{the net is doing all the work} \cite{net_doing_all_the_work}.
+
+\cite{ahah}
 
 %Current computer architectures are designed around major bottlenecks, huge amounts of data has to be shuffled back and forth to perform computations. Reaching its limits; transistors now so small that they only allow a single electron to pass through (similar in size to the ion channels). At this scale, problems arise when transistors may allow electrons to pass through, when they shouldn't and wise versa; which leads to unpredictable behaviour (small bursts of ones when should be be all zero, and wise versa.)
 
