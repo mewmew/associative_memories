@@ -38,14 +38,22 @@ Distinction between auto-associative and hetero-associative memory.
 \subsection{Hopfield Networks}
 
 % Wenting.
-
-In paper from J.J.Hopfield [1982], the drawbacks of Perceptron were addressed through its intractable back-coupling, lack of abstraction properties and requirement of synchrony. Information storage was improved with help of Nonlinearity, and emergent computational properties were obtained from simple properties of many cells rather than complex circuitry(which is a result of linear associativity). The input-output relationship of nonlinear computation and binary threshold units were introduced.
+Hopfield's model is an associative(content-addressable) memory model with threshold and feedback.
+In paper from J.J.Hopfield (1982), the drawbacks of Perceptron were addressed through its intractable back-coupling, lack of abstraction properties and requirement of synchronism. Information storage was improved with help of \textt{Nonlinearity}, and emergent computational properties were obtained from simple properties of many cells rather than complex circuitry(which is a result of linear associativity). The input-output relationship of nonlinear computation and binary threshold units were introduced.
 
 Collective behaviors of the model was studied and resulted with the following findings: a few stable states was resulted from most of the initial state space, properties necessary for a physical content-addressable memory were not dependent on the symmetry of the connectivity matrix $T_{ij}$. Statement supported by findings from experiments is that "about 0.15N(memory storage bits) states can be simultaneously remembered before error in recall is severe". Case with arbitrary starting state was studied and results of memories near to the starting state was highly produced. The nominally assigned memories which were called "attractors" dominates the phase flow whereas the flow is not entirely deterministic, which leads to a convergence to local optimum.
 
-Case of consistent internal correlations in the memory was as well adressed, and Hebb synaspses was used and slightly modified to generate nonsymmetric term~$\delta T_{ij}$, which limitation of sequence of four states was addressed.
+Case of consistent internal correlations in the memory was as well addressed, and Hebb synaspses was used and slightly modified to generate nonsymmetric term~$\delta T_{ij}$, which limitation of sequence of four states was addressed.
 
-Mostly auto-associative. Also hetero-associative?
+
+\subsubsection{Implementation Example: Optical Information Processing}
+Enhanced error-correcting capability is one important outcome which is benefited from Nonlinearity of Hopfield model. With $M$ words of each binary vector $v_i$ with length of N bits, matrix $T_i_j$ represents a storage of information. Matrix $T_i_j$ gets multiplied by a stored binary vector $v'_i$ results in a \texttt{pseudoeigensystem} if $N$ is sufficiently larger than $M$. This indicated that the output vector $v''_i$ equals the input.
+
+Supposed nonlinear iterative procedural experiments of certain number of known bits $N_1$ and the rest bits set to zero inside total of $N$ bits long vector were addressed to discover under what conditions the number of correct bits $N_2$ in output will be higher than $N_1$. A SNR(signal-to-noise ratio) equation which consists ratio of the expected value to the standard deviation on the same output vector, was used. As the Hopfield model has studied on the convergence property with respect to asynchronous operations, insensitivity to imperfections(nonuniformities, exact form of the threshold operation and errors in $T_i_j$ matrix) and correct convergence obtained with thresholded $T_i_j$. These all become most desired properties in optical implementation. Detailed optical implementation with 2D inputs was presented which was based on spatial-frequency multiplexing. Methods using Fourier transform, transmitting amplitude(weighted sum) and integral of the product of the input images were introduced in such an implementation. The robustness of a such system with nonlinear feedback becomes the most important feature.
+As a conclusion, the implementation with the capabilities and limitations of optical techniques matches excellently with the Hopfield model that requires global, linear operations and local, point nonlinearities in a fully interconnected optical system.
+
+
+% Mostly auto-associative. Also hetero-associative?
 
 \subsection{Bidirectional Associative Memory}
 
