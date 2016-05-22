@@ -40,19 +40,42 @@ Distinction between auto-associative and hetero-associative memory.
 % Wenting.
 Hopfield's model is an associative(content-addressable) memory model with threshold and feedback.
 
-In paper from J.J.Hopfield (1982), the drawbacks of Perceptron were addressed through its intractable back-coupling, lack of abstraction properties and requirement of synchronism. Information storage was improved with help of \textt{Nonlinearity}, and emergent computational properties were obtained from simple properties of many cells rather than complex circuitry(which is a result of linear associativity). The input-output relationship of nonlinear computation and binary threshold units were introduced.
+In paper from J.J.Hopfield(1982) \cite{computational_abilities}, the drawbacks of Perceptron were addressed through its intractable back-coupling, lack of abstraction properties and requirement of synchronism. Information storage was improved with help of Nonlinearity, and emergent computational properties were obtained from simple properties of many cells rather than complex circuitry(which is a result of linear associativity). The input-output relationship of nonlinear computation, binary threshold units and concept of the energy function were introduced.
 
-Collective behaviors of the model was studied and resulted with the following findings: a few stable states was resulted from most of the initial state space, properties necessary for a physical content-addressable memory were not dependent on the symmetry of the connectivity matrix $T_{ij}$. Statement supported by findings from experiments is that "about 0.15N(memory storage bits) states can be simultaneously remembered before error in recall is severe". Case with arbitrary starting state was studied and results of memories near to the starting state was highly produced. The nominally assigned memories which were called "attractors" dominates the phase flow whereas the flow is not entirely deterministic, which leads to a convergence to local optimum.
+Collective behaviors of the model was studied and resulted with the following findings: a few stable states was resulted from most of the initial state space, properties necessary for a physical content-addressable memory were not dependent on the symmetry of the connectivity matrix $T_{ij}$. Statement supported by findings from experiments is that "about 0.15N(memory storage bits, number of neurons) states can be simultaneously remembered before error in recall is severe", which refers to the memory capacity of the associative memory. Case with arbitrary starting state was studied and results of memories near to the starting state was highly produced. The nominally assigned memories which were called "attractors" dominates the phase flow whereas the flow is not entirely deterministic, which leads to a convergence to local optimum.
 
-Case of consistent internal correlations in the memory was as well addressed, and Hebb synaspses was used and slightly modified to generate nonsymmetric term~$\delta T_{ij}$, which limitation of sequence of four states was addressed.
+Case of consistent internal correlations in the memory was as well addressed, and Hebb synapses was used and slightly modified to generate nonsymmetric term~$\delta T_{ij}$, which limitation of sequence of four states was addressed.
+
 
 
 \subsubsection{Implementation Example: Optical Information Processing}
-In paper from D.Psaltis and N.Farhat(1985), thresholding and feedback properties from Hopfield model was used in implementation of an optical system that processes optical information.
-Enhanced error-correcting capability is one important outcome which is benefited from Nonlinearity of Hopfield model. With $M$ words of each binary vector $v_i$ with length of N bits, matrix $T_i_j$ represents a storage of information. Matrix $T_i_j$ gets multiplied by a stored binary vector $v'_i$ results in a \texttt{pseudoeigensystem} if $N$ is sufficiently larger than $M$. This indicated that the output vector $v''_i$ equals the input.
+In paper from D.Psaltis and N.Farhat(1985) \cite{optical_processing}, thresholding and feedback properties from Hopfield model was used in implementation of an optical system that processes optical information.
 
-Supposed nonlinear iterative procedural experiments of certain number of known bits $N_1$ and the rest bits set to zero inside total of $N$ bits long vector were addressed to discover under what conditions the number of correct bits $N_2$ in output will be higher than $N_1$. A SNR(signal-to-noise ratio) equation which consists ratio of the expected value to the standard deviation on the same output vector, was used. As the Hopfield model has studied on the convergence property with respect to asynchronous operations, insensitivity to imperfections(nonuniformities, exact form of the threshold operation and errors in $T_i_j$ matrix) and correct convergence obtained with thresholded $T_i_j$. These all become most desired properties in optical implementation. Detailed optical implementation with 2D inputs was presented which was based on spatial-frequency multiplexing. Methods using Fourier transform, transmitting amplitude(weighted sum) and integral of the product of the input images were introduced in such an implementation. The robustness of a such system with nonlinear feedback becomes the most important feature.
+Enhanced error-correcting capability is one important outcome which is benefited from Nonlinearity of Hopfield model. With $M$ words of each binary vector $v_i$ with length of N bits, matrix $T_i_j$ represents a storage of information. Matrix $T_{ij}$ gets multiplied by a stored binary vector $v'_i$ results in a \texttt{pseudoeigensystem} if $N$ is sufficiently larger than $M$. This indicated that the output vector $v''_i$ equals the input.
+
+Supposed nonlinear iterative procedural experiments of certain number of known bits $N_1$ and the rest bits set to zero inside total of $N$ bits long vector were addressed to discover under what conditions the number of correct bits $N_2$ in output will be higher than $N_1$. A SNR(signal-to-noise ratio) equation which consists ratio of the expected value to the standard deviation on the same output vector, was used. As the Hopfield model has studied on the convergence property with respect to asynchronous operations, insensitivity to imperfections(nonuniformities, exact form of the threshold operation and errors in $T_{ij}$ matrix) and correct convergence obtained with thresholded $T_{ij}$. These all become most desired properties in optical implementation. Detailed optical implementation with 2D inputs was presented which was based on spatial-frequency multiplexing. Methods using Fourier transform, transmitting amplitude(weighted sum) and integral of the product of the input images were introduced in such an implementation. The robustness of a such system with nonlinear feedback becomes the most important feature.
 As a conclusion, the implementation with the capabilities and limitations of optical techniques matches excellently with the Hopfield model that requires global, linear operations and local, point nonlinearities in a fully interconnected optical system.
+
+
+
+\subsubsection{Memory Capacity with Modification: \\ replacing sigmoid neuron with a nonmonotonic neuron}
+In paper from S.Yoshizawa, M.Morita and S.Amari(1992) \cite{capacity_of_nonmonotonic_model} it started with introduction of a new method by replacing sigmoid neuron with a nonmonotonic neuron and discussed theorectically on potential of absolute capacity(the maximum number of randomly generated patterns which are memorized as the equilibria of the network with the correlation-type connection weights) to be of order $n$ (nearly equal to 0.4n).
+
+Previous memory capacities were briefly introduced that Hopfield(1982) model's associative memory capacity is 0.15n, the proven result of absolute capacity is asymptotically $ \frac{n}{2\log{n}} $ from McEliece, Posner, Rodemich, & Venkatesh, 1987; Weisbuch, 1985), and relative capacity(recalling process) is about 0.14n(with admission of small percent of errors) with replica method but about 0.16n with a simply approximation method from respectively two different research work.
+
+Various research suggestions were mentioned though all failed to deal completely with flaws of the conventional model, that both absolute and relative capacities are too small as well as the existence of large number of spurious memories. With a nonmonotonic neuron the result turned to be 0.4n for the absolute capacity which is even greater than relative capacity while the spurious memory disappeared.
+
+With conventional neuron, memorized pattern is unstable ,whereas a basin of attraction around memorized pattern was shown with nonmonotonic neuron by replacing sigmoid function with a nonmonotonic output function \ref{fig:nonmonotonic} to neuron elements from the recalling process of an autocorrelation associative memory. This was named as Morita Model in the paper though it is essentially an extension from Hopfield Model.
+With by then the existence of equilibrium solutions and local stability, the authors did not further investigate on problems as the following: the size of the basin of attraction, the full sketch of spurious memories and the behaviour for clustered memorized patterns, which leaves more research work for future researchers to understand better associative memory with nonmonotonic neurons.
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale = 0.8]{nonmonotonic.JPG}
+\caption{The nonmonotonic output function, S.Yoshizawa, M.Morita and S.Amari(1992)}
+\label{fig:nonmonotonic}
+\end{figure}
+
 
 
 % Mostly auto-associative. Also hetero-associative?
