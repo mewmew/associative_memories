@@ -97,6 +97,15 @@ Mostly hetero-associative. Also auto-associative.
 
 % --- Lucas
 
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{inc/boltzmann_machine.png}
+		\caption{Illustration of a Boltzmann Machine. The blue units represents three hidden units, while the four white units represents four visible units.\protect\footnotemark}
+		\label{fig:boltzmann_machine}
+	\end{center}
+\end{figure}
+\footnotetext{Original image (CC BY-SA): \url{https://en.wikipedia.org/wiki/File:Boltzmannexamplev1.png}}
+
 The "Boltzmann Machine" (BM) is a form of "parallel constraint satisfaction network" \cite{ackley1985learning}. It is capable of learning the underlying constraints of a domain by only being shown examples of it. The BM is composed of units forming a complete graph where the connection between two units are symmetric, meaning that the weight on the connection is the same in either direction. No unit has a connection to itself. The units are binary, meaning that they can assume one of two states, on or off. The state of a unit is determined by a probabilistic function based on the states of the units neighbours. A strong connection (high weight value) between two units indicates that if either of these two units are active, the other one should probably be active as well. While a weak connection (low weight value) indicates that these should probably not be active at the same time.
 
 The BM is notably similar to the Hopfield network in that it also defines a global energy state of the system, utilizing the same equation that determines the global energy value. Each global state can be identified by the energy of the system in that state. By forcing the values of the visible units to represent a training set the system attempts to find an energy configuration that is compatible with the given input. The resulting energy state can then be interpreted as to how well the given data fulfills the constraints of the domain. Thus by minimizing the energy the system learns an interpretation of the problem that increasingly satisfies the constraints of the domain.
@@ -189,16 +198,13 @@ foo
 
 %Lucas.
 
-Unfortunately, the Boltzmann Machine can only be used for simpler problem domains. If the BM is scaled beyond any trivial implementation it becomes too slow and almost stops learning. This is due to the fact that all units of the BM are fully connected to each other which does not scale well. In order to use the BM for bigger tasks a restriction has to be made. Namely, connections between units in the same layer can not be allowed. This is called the Restricted Boltzmann Machine (or "Harmonium" as the original author referred to it) \cite{smolensky1986information}.
+Unfortunately, the Boltzmann Machine can only be used for simpler problem domains. If the BM is scaled beyond any trivial domain it becomes too slow and almost stops learning. This is due to the fact that all units of the BM are fully connected to each other which does not scale well.
 
-Versions of the Restricted Boltzmann Machine have been successfully used in deep learning \cite{hinton2012better} and speech recognition \cite{dahl2010phone}.
+In order to use the BM for bigger tasks a restriction has to be made. Namely, connections between units in the same layer can not be allowed. This is called the Restricted Boltzmann Machine (or "Harmonium" as the original author referred to it) \cite{smolensky1986information}.
 
-% Used for deep learning, can learn to create images based on what it has earlier seen.
-% Used for speech recognition.
+Versions of the Restricted Boltzmann Machine (RBM) have been successfully used in deep learning \cite{hinton2012better} and speech recognition \cite{dahl2010phone}.
 
-% NOTES:
-%Pure Boltzman does not scale, thus impractical.
-%Restricted Boltzman, basis for deep learning today, using multiple layers.
+The general idea when using RBM's in deep learning is to "stack" several RBM's on top of each other. The activities of the units in the hidden layer of one RBM can be used as input vector for an other RBM. This way the overall system does not have the problem with scalability that the ordinary Boltzmann Machine suffered. Every time a new layer is added on top the generative model is improved.
 
 \subsection{Memory Resistor}
 
@@ -240,7 +246,7 @@ Preliminary list of references, cited to force inclusion within the bibliography
 \cite{computational_abilities} \cite{optical_processing} \cite{capacity_of_nonmonotonic_model} \cite{stimulus_unitization_and_aging}
 
 % Lucas
-\cite{ackley1985learning} \cite{capacity_of_hopfield} \cite{high-order_neural_networks} \cite{neural_network_models_for_associative_memory} \cite{sparsely_encoded_associative_memory}
+%\cite{ackley1985learning} \cite{capacity_of_hopfield} \cite{high-order_neural_networks} \cite{neural_network_models_for_associative_memory} \cite{sparsely_encoded_associative_memory}
 
 % Robin
 \cite{memsistor} \cite{principle_of_neural_associative_memory} \cite{parallel_models_of_associative_memory} \cite{associative_memory_using_small-world_architecture} \cite{associatron} \cite{associative_search_network} \cite{deep_machine_learning} \cite{on_associative_memory} \cite{from_cell_to_cortex} \cite{ahah}
