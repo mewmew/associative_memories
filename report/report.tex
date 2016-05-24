@@ -103,12 +103,12 @@ The BM is notably similar to the Hopfield network in that it also defines a glob
 
 The simplest way to minimize the energy into a local minimum of the system is to change each unit into a value that results in a lower energy state. The data needed to determine this change is locally accessible to each unit. If the sum of all values for a given units neighbour exceeds the threshold of that unit, the resulting state of the unit should be on. Otherwise it should be off. This is the usual algorithm for binary units.
 
-Because of this deterministic algorithm it suffers from the usual weaknesses of gradient descent algorithms, namely it gets stuck in local minima if its initial state is close to one. In order to alleviate the algorithm of this problem noise is introduced in the training. This allows the network to "jump" out of these minima into configurations of higher energy. The algorithm used for noise introduction is a variation of the "Metropolis algorithm" \cite{metropolis1953equation} that was used to study thermodynamic systems. This modified version introduces a concept of temperature to the machine. The machine then tries to reach "thermal equilibrium" during training. Meaning that the machine is allowed to run repeatedly until the global energy of the system converges to a fixed state over a temperature that is initially high and then slowly decreased over the runtime of the system. The probablitiy of finding the system in a global state after it has reached thermal equilibrium follows a Boltzmann distribution.
+Because of this deterministic algorithm it suffers from the usual weaknesses of gradient descent algorithms, namely it gets stuck in local minima if its initial state is close to one. In order to alleviate the algorithm of this problem noise is introduced in the training. This allows the network to "jump" out of these minima into configurations of higher energy. The algorithm used for noise introduction is a variation of the "Metropolis algorithm" \cite{metropolis1953equation} that was used to study thermodynamic systems. This modified version introduces a concept of temperature to the machine. The machine then tries to reach "thermal equilibrium" during training. Meaning that the machine is allowed to run repeatedly until the global energy of the system converges to a fixed state over a temperature that is initially high and then slowly decreased over the runtime of the system. The probability of finding the system in a global state after it has reached thermal equilibrium follows a Boltzmann distribution.
 
 %TODO write more about this temperature thing
 %TODO write more about the probabilistic features of the BM as well as the boltzmann distribution that gives the system its name.
 
-Training is conducted in two phases, the first is called the "positive" phase were the visible units of the machine are set to the values of the training set. The next phase is called the "negative" phase. During this phase the machine is allowed to run freely, independent of the training set.
+Training is conducted in two phases, the first is called the "positive" phase were the visible units of the machine are set to the values of the training set. The next phase is called the "negative" phase. During this phase the machine is allowed to run freely, independent of the training set. The machine is iteratively switched between these two phases for the duration of the training until it reaches thermal equilibrium. The goal of the training is for the machine to generate the input vector with a high probability.
 
 % --- NOTES
 %The difference between the BM and the Hopfield network is mainly that the nodes (or units as they are referred to in the original paper) of the Boltzmann Machine are stochastic by nature.
@@ -189,6 +189,14 @@ foo
 
 %Lucas.
 
+Unfortunately, the Boltzmann Machine can only be used for simpler problem domains. If the BM is scaled beyond any trivial implementation it becomes too slow and almost stops learning. This is due to the fact that all units of the BM are fully connected to each other which does not scale well. In order to use the BM for bigger tasks a restriction has to be made. Namely, connections between units in the same layer can not be allowed. This is called the Restricted Boltzmann Machine (or "Harmonium" as the original author referred to it) \cite{smolensky1986information}.
+
+Versions of the Restricted Boltzmann Machine have been successfully used in deep learning \cite{hinton2012better} and speech recognition \cite{dahl2010phone}.
+
+% Used for deep learning, can learn to create images based on what it has earlier seen.
+% Used for speech recognition.
+
+% NOTES:
 %Pure Boltzman does not scale, thus impractical.
 %Restricted Boltzman, basis for deep learning today, using multiple layers.
 
