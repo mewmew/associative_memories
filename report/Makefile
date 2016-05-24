@@ -1,12 +1,10 @@
-all: report.pdf clean_aux
+all: report.pdf
 
 %.pdf: %.tex
-	pdflatex report.tex
-	bibtex report
-	pdflatex report.tex
-	pdflatex report.tex
+	latexmk -pdf $<
+	latexmk -c -bibtex $<
 
-.PHONY: clean_aux
+.PHONY: clean
 
-clean_aux:
+clean:
 	rm -f *.aux *.log *.out *.toc *.bbl *.blg *.dvi *.rtf *.bcf *-blx.bib *.run.xml sections/*.aux
