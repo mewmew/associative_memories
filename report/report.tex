@@ -207,6 +207,15 @@ foo
 
 %Lucas.
 
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{inc/Restricted_Boltzmann_machine.png}
+		\caption{Illustration of a Restricted Boltzmann Machine.\protect\footnotemark}
+		\label{fig:restricted_boltzmann_machine}
+	\end{center}
+\end{figure}
+\footnotetext{Original image (CC BY-SA): \url{https://en.wikipedia.org/wiki/File:Restricted_Boltzmann_machine.svg}}
+
 Unfortunately, the Boltzmann Machine can only be used for simpler problem domains. If the BM is scaled beyond any trivial domain it becomes too slow and almost stops learning. This is due to the fact that all units of the BM are fully connected to each other which does not scale well.
 
 In order to use the BM for bigger tasks a restriction has to be made. Namely, connections between units in the same layer can not be allowed. This is called the Restricted Boltzmann Machine (or "Harmonium" as the original author referred to it) \cite{smolensky1986information}.
