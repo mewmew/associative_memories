@@ -98,7 +98,7 @@ Experiments with pictorial stimuli(paired pictures) were done in 3 consecutive s
 
 The "Boltzmann Machine" (BM) is a form of "parallel constraint satisfaction network" \cite{ackley1985learning}. It is capable of learning the underlying constraints of a domain by only being shown examples of it. The BM is composed of units forming a complete graph where the connection between two units are symmetric, meaning that the weight on the connection is the same in either direction. No unit has a connection to itself. The units are binary, meaning that they can assume one of two states, on or off. The state of a unit is determined by a probabilistic function based on the states of the units neighbours. A strong connection (high weight value) between two units indicates that if either of these two units are active, the other one should probably be active as well. While a weak connection (low weight value) indicates that these should probably not be active at the same time.
 
-The BM is notably similar to the Hopfield network in that it also defines a global energy state of the system, utilizing the same equation that determines the global energy value. Each global state can be identified by the energy of the system in that state. By forcing the values of the visible units to represent a training set the system attempts to find an energy configuration that is compatible with the given input. The resulting energy state can then be interpreted as to how well the given data fulfills the constraints of the domain. Thus by minimizing the energy the system learns an interpretation of the problem that increasingly satisfies the constraints of the domain.
+The BM is notably similar to the Hopfield network in that it also defines a global energy state of the system, utilizing the same equation that determines the global energy value. Each global state can be identified by the energy of the system in that state. By forcing the values of the visible units to represent a training set the system attempts to find an energy configuration that is compatible with the given input. The resulting energy state can then be interpreted as to how well the given data fulfils the constraints of the domain. Thus by minimizing the energy the system learns an interpretation of the problem that increasingly satisfies the constraints of the domain.
 
 The simplest way to minimize the energy into a local minimum of the system is to change each unit into a value that results in a lower energy state. The data needed to determine this change is locally accessible to each unit. If the sum of all values for a given units neighbour exceeds the threshold of that unit, the resulting state of the unit should be on. Otherwise it should be off. This is the usual algorithm for binary units.
 
@@ -107,7 +107,7 @@ Because of this deterministic algorithm it suffers from the usual weaknesses of 
 %TODO write more about this temperature thing
 %TODO write more about the probabilistic features of the BM as well as the boltzmann distribution that gives the system its name.
 
-Training is conducted in two phases, the first is called the "positive" phase were the visible units of the machine are set to the values of the training set. The next phase is called the "negative" phase. During this phase the machine is allowed to run freely, independent of the training set. The machine is iteratively switched between these two phases for the duration of the training until it reaches thermal equilibrium. The goal of the training is for the machine to generate the input vector with a high probability.
+Training is conducted in two phases, in the first phase the visible units of the machine are set to the values of the training set. In the next phase the machine is allowed to run freely, independent of the training set. The machine is iteratively switched between these two phases for the duration of the training until it reaches thermal equilibrium. The goal of the training is for the machine to generate the input vector with a high probability.
 
 % --- NOTES
 %The difference between the BM and the Hopfield network is mainly that the nodes (or units as they are referred to in the original paper) of the Boltzmann Machine are stochastic by nature.
@@ -183,13 +183,13 @@ Definitions of capacity.
 \end{figure}
 \footnotetext{Original image (CC BY-SA): \url{https://en.wikipedia.org/wiki/File:Restricted_Boltzmann_machine.svg}}
 
-Unfortunately, the Boltzmann Machine can only be used for simpler problem domains. If the BM is scaled beyond any trivial domain it becomes too slow and almost stops learning. This is due to the fact that all units of the BM are fully connected to each other which does not scale well.
+Unfortunately, the Boltzmann Machine is slow to train and is thus only practical for simpler problem domains. If the BM is scaled beyond any trivial domain it becomes too slow and almost stops learning. This is due to the fact that all units of the BM are fully connected to each other which does not scale well.
 
 In order to use the BM for bigger tasks a restriction has to be made. Namely, connections between units in the same layer can not be allowed. This is called the Restricted Boltzmann Machine (or "Harmonium" as the original author referred to it) \cite{smolensky1986information}.
 
-Versions of the Restricted Boltzmann Machine (RBM) have been successfully used in deep learning \cite{hinton2012better} and speech recognition \cite{dahl2010phone}.
+Versions of the Restricted Boltzmann Machine (RBM) have been successfully used in many applications such as deep learning \cite{hinton2012better} and speech recognition \cite{dahl2010phone}.
 
-The general idea when using RBM's in deep learning is to "stack" several RBM's on top of each other. The activities of the units in the hidden layer of one RBM can be used as input vector for an other RBM. This way the overall system does not have the problem with scalability that the ordinary Boltzmann Machine suffered. Every time a new layer is added on top the generative model is improved.
+The general idea when using RBM's in deep learning is to "stack" several RBM's on top of each other. The activities of the units in the hidden layer of one RBM can be used as input vector for an other RBM. This way the overall system does not have the problem with scalability that the ordinary Boltzmann Machine suffered as well as the added bonus that the generative model is improved each time a new layer is added on top of the existing ones.
 
 \subsection{Memory Resistor}
 
