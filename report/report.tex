@@ -113,7 +113,7 @@ Mostly hetero-associative. Also auto-associative.
 		\label{fig:boltzmann_machine}
 	\end{center}
 \end{figure}
-\footnotetext{Original image (CC BY-SA): \url{https://en.wikipedia.org/wiki/File:Boltzmannexamplev1.png}}
+\footnotetext{Original image (Public Domain): \url{https://en.wikipedia.org/wiki/File:Boltzmannexamplev1.png}}
 
 The "Boltzmann Machine" (BM) is a form of "parallel constraint satisfaction network" \cite{ackley1985learning}. It is capable of learning the underlying constraints of a domain by only being shown examples of it. The BM is composed of units forming a complete graph where the connection between two units are symmetric, meaning that the weight on the connection is the same in either direction. No unit has a connection to itself. The units are binary, meaning that they can assume one of two states, on or off. The state of a unit is determined by a probabilistic function based on the states of the units neighbours. A strong connection (high weight value) between two units indicates that if either of these two units are active, the other one should probably be active as well. While a weak connection (low weight value) indicates that these should probably not be active at the same time.
 
