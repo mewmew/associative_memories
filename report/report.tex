@@ -1,11 +1,6 @@
-% TODO: Pictures
-
 \documentclass[12pt, a4paper]{article}
 
 \usepackage{preamble}
-
-% TODO: Decide who focuses on which parts. There will of course be overlap and
-% we will all review and discuss the different sections.
 
 \title{Models of Associative Memory}
 
@@ -55,8 +50,6 @@ Collective behaviors of the model was studied and resulted with the following fi
 
 Case of consistent internal correlations in the memory was as well addressed, and Hebb synapses was used and slightly modified to generate nonsymmetric term~$\delta T_{ij}$, which limitation of sequence of four states was addressed.
 
-
-
 \subsubsection{Implementation Example: Optical Information Processing}
 In paper from D.Psaltis and N.Farhat(1985) \cite{optical_processing}, thresholding and feedback properties from Hopfield model was used in implementation of an optical system that processes optical information.
 
@@ -64,8 +57,6 @@ Enhanced error-correcting capability is one important outcome which is benefited
 
 Supposed nonlinear iterative procedural experiments of certain number of known bits $N_1$ and the rest bits set to zero inside total of $N$ bits long vector were addressed to discover under what conditions the number of correct bits $N_2$ in output will be higher than $N_1$. A SNR(signal-to-noise ratio) equation which consists ratio of the expected value to the standard deviation on the same output vector, was used. As the Hopfield model has studied on the convergence property with respect to asynchronous operations, insensitivity to imperfections(nonuniformities, exact form of the threshold operation and errors in $T_{ij}$ matrix) and correct convergence obtained with thresholded $T_{ij}$. These all become most desired properties in optical implementation. Detailed optical implementation with 2D inputs was presented which was based on spatial-frequency multiplexing. Methods using Fourier transform, transmitting amplitude(weighted sum) and integral of the product of the input images were introduced in such an implementation. The robustness of a such system with nonlinear feedback becomes the most important feature.
 As a conclusion, the implementation with the capabilities and limitations of optical techniques matches excellently with the Hopfield model that requires global, linear operations and local, point nonlinearities in a fully interconnected optical system.
-
-
 
 \subsubsection{Memory Capacity with Modification: \\ replacing sigmoid neuron with a nonmonotonic neuron}
 In paper from S.Yoshizawa, M.Morita and S.Amari(1992) \cite{capacity_of_nonmonotonic_model} it started with introduction of a new method by replacing sigmoid neuron with a nonmonotonic neuron and discussed theorectically on potential of absolute capacity(the maximum number of randomly generated patterns which are memorized as the equilibria of the network with the correlation-type connection weights) to be of order $n$ (nearly equal to $0.4n$).
@@ -77,15 +68,12 @@ Various research suggestions were mentioned though all failed to deal completely
 With conventional neuron, memorized pattern is unstable, whereas a basin of attraction around memorized pattern was shown with nonmonotonic neuron by replacing sigmoid function with a nonmonotonic output function \textit{figure \ref{fig:nonmonotonic}} to neuron elements from the recalling process of an autocorrelation associative memory. This was named as Morita Model in the paper though it is essentially an extension from Hopfield Model.
 By then the existence of equilibrium solutions and local stability, the authors did not further investigate on problems as the following: the size of the basin of attraction, the full sketch of spurious memories and the behaviour for clustered memorized patterns, which leaves more research work for future researchers to understand better associative memory with nonmonotonic neurons.
 
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale = 0.8]{nonmonotonic.JPG}
-\caption{The nonmonotonic output function, S.Yoshizawa, M.Morita and S.Amari(1992)}
-\label{fig:nonmonotonic}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale = 0.8]{nonmonotonic.JPG}
+	\caption{The nonmonotonic output function, S.Yoshizawa, M.Morita and S.Amari(1992)}
+	\label{fig:nonmonotonic}
 \end{figure}
-
-
 
 %THIS IS STH EXTRA OUTSIDE HOPFIELD
 \subsection{Experiment on Implicit Memory for Novel Associations between pictures: \\ Effects of Stimulus Unitization and Aging\cite{stimulus_unitization_and_aging}}
@@ -94,13 +82,6 @@ From various previous research, concepts such as associative priming, unitizatio
 
 
 Experiments with pictorial stimuli(paired pictures) were done in 3 consecutive stages, where the result from first stage showed no evidence on requirement of spatial contiguity, though associative priming was enhanced compared to with spatially separated stimuli, which proved "implicit memory for novel associations still can occur in the absence of an emergent conceptual representation". The second experiment was an extension from the first experiment, with focus on the effects of aging and spatial contiguity of the same topic of stimuli on novel association priming between pictures, where stunning result was shown that "associative priming is age invariant"(exposure of pictures was longer with older group to yield a matched performance in the baseline). The last experiment was based on both first and second experiments that "associative priming with pictorial stimuli is modulated by spatial contiguity but not by aging", and the study proved further evidence for the notion that novel association priming for picture pairs is mediated by the PRS(Perceptual Representation System).
-
-
-% Mostly auto-associative. Also hetero-associative?
-
-\subsection{Bidirectional Associative Memory}
-
-Mostly hetero-associative. Also auto-associative.
 
 \subsection{Boltzmann Machine}
 
@@ -131,14 +112,6 @@ Training is conducted in two phases, the first is called the "positive" phase we
 % --- NOTES
 %The difference between the BM and the Hopfield network is mainly that the nodes (or units as they are referred to in the original paper) of the Boltzmann Machine are stochastic by nature.
 %The BM can be used for constraint satisfaction problems that involve a large amount of weak constraints.
-
-
-
-%\subsection{Hamming networks}
-
-%foo
-
-% TODO: Decide whether to include Hamming networks or not.
 
 \subsection{Memory Resistor}
 
@@ -196,12 +169,6 @@ Definitions of capacity.
 1985, $0.14n$ (relative capacity of recalling process)
 
 1993, $ n ~= 0.4n $ (new result, absolute capacity)
-
-\subsection{Bidirection Associative Memory}
-
-% TODO: Check.
-
-foo
 
 \subsection{Boltzmann Machine}
 
