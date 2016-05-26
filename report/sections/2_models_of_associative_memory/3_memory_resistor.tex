@@ -4,7 +4,9 @@
 
 In 2008, a group of researchers from HP labs published a paper entitled \textit{``The missing memristor found''} \cite{hp_memristor_found}. What, then, is a memristor, and how did we know it was missing? A memristor (short for memory resistor) is a resistor with memory whose resistance depends on the past flows of current passed through the circuit. The resistance of a memristor is increased by current travelling through it in one direction, and decreased by current travelling through it in the other direction. A memristor is a passive circuit which remembers its resistance even when inactive and without power for long periods of time. These properties make memristors interesting candidates for non-volatile storage and memory units, as they retain their state when unpowered, and specifically as they enable storage of continuous ranges of values (i.e. low \textit{through} high resistance) in contrast to discrete binary values (i.e. 0 \textit{or} 1).
 
-Back in 1972, Leon Chua, often referred to as the father of non-linear circuit theory, laid the mathematical foundation detailing the relations between the four fundamental circuit elements. Interestingly, at that time only three fundamental circuit elements had physical counterparts, namely resistors, capacitors and inductors. The fourth fundamental circuit element, the memristor, was only conceptualized theoretically for the sake of symmetry (see figure \ref{fig:circuit_elements}) and presented in Chua's seminal paper \textit{``Memristor-the missing circuit element''} \cite{chua_memristor}.
+Back in 1971, Leon Chua, often referred to as the father of non-linear circuit theory, laid the mathematical foundation detailing the relations between the four fundamental circuit elements. Interestingly, at that time only three fundamental circuit elements had physical counterparts, namely resistors, capacitors and inductors. The fourth fundamental circuit element, the memristor, was only conceptualized in theory by Chua for the sake of symmetry (see figure \ref{fig:circuit_elements}). As outlined in Chua's seminal paper \textit{``Memristor-the missing circuit element''} \cite{chua_memristor}, the current-$I$ voltage-$V$ curve of a memristor has a unique shape, an IV-fingerprint if you will, in the form of a pinched hysteresis loop (see figure \ref{fig:pinched_hysteresis}). A hysteresis loop indicates that a system has an internal state (i.e. memory) which affects the output of the system and which depends on past inputs to the system \cite{memristor_hayes}. As famously state by Chua, \textit{``If it's pinched it's a memristor''} indicates that the hysteresis loop passes through the origin.
+
+% TODO: Explain the underlying reason of the hysteresis loop, i.e. alternating between two states (metastable switch).
 
 \begin{figure}[htbp]
 	\begin{center}
@@ -15,57 +17,22 @@ Back in 1972, Leon Chua, often referred to as the father of non-linear circuit t
 \end{figure}
 \footnotetext{Original image (CC BY-SA): \url{https://en.wikipedia.org/wiki/File:Two-terminal_non-linear_circuit_elements.svg}}
 
-% TODO: Continue from here.
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{inc/pinched_hysteresis.png}
+		\caption{IV-curve of a memristor circuit, arrow indicates time.\protect\footnotemark}
+		\label{fig:pinched_hysteresis}
+	\end{center}
+\end{figure}
+\footnotetext{Original image (© Brian Hayes): \url{https://www.americanscientist.org/libraries/documents/201128120228377-2011-03CompScienceHayes.pdf}}
 
-Looking at the current~$I$ and voltage~$V$ plot, a memristor may be identified by the pinched hysteresis loop going through the origin (see figure \ref{fig:pinched_hysteresis}. TODO: Explain the underlying reason of the hysteresis loop, i.e. alternating between two states (metastable switch).
+% TODO: Continue from here.
 
 Several similarities have been identified between the properties of memristors and synapses, which make them interesting candidates for associative memory models.
 
 TODO: Extend. Artificial synapses experiment using memristors conducted in 2010, empirically validating the formation of associative memories using three neurons and two synapses \cite{memristor_conditioning}.
 
-% ref: Finding the Missing Memristor - R. Stanley Williams
-%
-% > The fourth fundamental passive circuit element.
-% >
-% > Resistor
-% > Capacitor
-% > Inductor
-% >
-% > AND Memristor
-% >
-% > UC Bercley Lean Chua is to circuit theory what Albert Einstein is to relativity.
-% > The father of non-linear cirtuit theory.
-% >
-% > Noticed something missing from the circuit diagram; based on symmetry and beauty, there should be a fourth.
-% > Original paper, memsitory the missing circuit element. 1971
-% >
-% > Passive device with state.
-% >
-% > Frequency response of Lissajous figures.
-% > The pinched hysteresis loop.
-% >
-% > "If you see a pinced hysteresis loop in an IV-curve, you've probably got a memristor."
-% >
-% > Make a circuit using only resistors, capacitors and inductors to come up with the IV-characteristics of a memristor. It cannot be done, and thus belongs to it as a fundamental device; as proven by Lean Chua.
-% >
-% > Even before the original paper in 1971, there was peer-review research published which illustrated pinched hysteresis loop. Basically they had managed to discover the memristor, they just didn't know what it was called and thought it was an abnomality.
-% >
-% > Strukov, Stewart, Snider & Williams, Nature 453 80 (2008)
-
-\begin{figure}[htbp]
-	\begin{center}
-		\includegraphics[width=0.5\textwidth]{inc/pinched_hysteresis.png}
-		\caption{A pinched hysteresis loop plotted on an IV-curve.\protect\footnotemark}
-		\label{fig:pinched_hysteresis}
-	\end{center}
-\end{figure}
-\footnotetext{Original image (CC BY-SA): \url{https://en.wikipedia.org/wiki/File:Pinched_crossing_hysteresis.png}}
-
-TODO: Extend. In 2008, HP released a paper titled \textit{The missing memristor found}, which outlined the hardware implementation of a memristor \cite{hp_memristor_found}, thus validating the existence of the hypothesized memristors circuit element. Retrospectively, several research groups had discovered circuits with the tell-tale properties of memristor, i.e. with a pinched hysteresis loop. TODO: Include ref about prior research, before 2008.
-
 % ref: Tim Molter HiPeac Prague 2016 Memristor Keynote
-%
-% The resistance of a memristor depends on the history of current that has previously flowed through the device.
 %
 % Search for "memristor" on Google scholar has been doubling every 18-24 months since 2008.
 %
@@ -228,13 +195,6 @@ TODO: Extend. In 2008, HP released a paper titled \textit{The missing memristor 
 % >
 % > d (the distance) is zero in the brain, has tremendous effects on energy usage.
 % >
-% > "If it's pinched it's a memristor"
-% > - Leon Chua
-% >
-% > Plot voltage vs current. You get this pinched hisorises loop. Implies that the device has a memory. If it was just a resistor it would be a line. If it was a capacitor it would be a circle.
-% >
-% > Tell tale sign that it is a memristor.
-% >
 % > A memristor for each pathway, and they are competing with eachother so you need two per synapse. Think of the pair as a synapse itself, and the different in conductance between the two is the value of the synapse. If one is more conductive than the other it is positive, and vise versa, its negative.
 % >
 % > Naturally they go towards zero. But if you give them a burst, you can make them positive or negative as you want. Read brings it a little closer together, then reward it.
@@ -273,7 +233,10 @@ TODO: Extend. In 2008, HP released a paper titled \textit{The missing memristor 
 % Won a nobel price. Eliol Prigoge.
 % There is a natural tendency for complex systems to minimize the energy consumption
 
-\subsubsection{Knowm Synapses}
+% === [ Knowm Synapses ] ===
+
+%\subsubsection{AHaH Nodes}
+%\subsubsection{Knowm Synapses}
 
 % ref: http://knowm.org/knowm/
 %
