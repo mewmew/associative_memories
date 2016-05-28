@@ -19,9 +19,9 @@ The simplest way to minimize the energy into a local minimum of the system is to
 
 Because of this deterministic algorithm it suffers from the usual weaknesses of gradient descent algorithms, namely, it gets stuck in local minima if its initial state is close to one. In order to alleviate the algorithm of this problem, noise is introduced in the training. This allows the network to ``jump'' out of these minima into configurations of higher energy. The algorithm used for noise introduction is a variation of the ``Metropolis algorithm'' \cite{metropolis1953equation} that was used to study thermodynamic systems. This modified version introduces a concept of temperature to the machine, which then tries to reach ``thermal equilibrium'' during training. Meaning that the machine is allowed to run repeatedly until the global energy of the system converges to a fixed state over a temperature that is initially high and then slowly decreased over the runtime of the system. The probability of finding the system in a global state after it has reached thermal equilibrium follows a Boltzmann distribution. If the temperature feed into the machine is equal to zero the stochastic nature of it is removed, the machine becomes deterministic and can be seen as a regular Hopfield network.
 
-%TODO discuss the usage of hebbian learning in boltzmann
+%TODO discuss the usage of Hebbian learning in Boltzmann
 %TODO write more about this temperature thing
-%TODO write more about the probabilistic features of the BM as well as the boltzmann distribution that gives the system its name.
+%TODO write more about the probabilistic features of the BM as well as the Boltzmann distribution that gives the system its name.
 
 Training is conducted in two phases, in the first phase the visible units of the machine are set to the values of the training set. In the next phase the machine is allowed to run freely, independent of the training set. The machine is iteratively switched between these two phases for the duration of the training until it reaches thermal equilibrium. The goal of the training is for the machine to be able to generate the input vector with a high probability of success.
 
