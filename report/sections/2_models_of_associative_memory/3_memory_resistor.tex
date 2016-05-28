@@ -1,12 +1,10 @@
 \subsection{Memory Resistor}
 
-%Robin.
-
 In 2008, a group of researchers from HP labs published a paper entitled \textit{``The missing memristor found''} \cite{hp_memristor_found}. What, then, is a memristor, and how did we know it was missing? A memristor (short for memory resistor) is a resistor with memory whose resistance depends on the past flows of current passed through the circuit. The resistance of a memristor is increased by current travelling through it in one direction, and decreased by current travelling through it in the other direction. A memristor is a passive circuit which remembers its resistance even when inactive and without power for long periods of time. These properties make memristors interesting candidates for non-volatile storage and memory units, as they retain their state when unpowered, and specifically as they enable storage of continuous ranges of values (i.e. low \textit{through} high resistance) in contrast to discrete binary values (i.e. 0 \textit{or} 1).
 
-Back in 1971, Leon Chua, often referred to as the father of non-linear circuit theory, laid the mathematical foundation detailing the relations between the four fundamental circuit elements. Interestingly, at that time only three fundamental circuit elements had physical counterparts, namely resistors, capacitors and inductors. The fourth fundamental circuit element, the memristor, was only conceptualized in theory by Chua for the sake of symmetry (see figure \ref{fig:circuit_elements}). As outlined in Chua's seminal paper \textit{``Memristor-the missing circuit element''} \cite{chua_memristor}, the current-$I$ voltage-$V$ curve of a memristor has a unique shape, an IV-fingerprint if you will, in the form of a pinched hysteresis loop (see figure \ref{fig:pinched_hysteresis}). A hysteresis loop indicates that a system has an internal state (i.e. memory) which affects the output of the system and which depends on past inputs to the system \cite{memristor_hayes}. As famously state by Chua, \textit{``If it's pinched it's a memristor''} indicates that the hysteresis loop passes through the origin.
+% TODO: Add ref. Knowm Collaborates with Kris Campbell at BSU. (Continuous value stored as resistance in a memristor. breaking outside of the 0 and 1 box.)
 
-% TODO: Explain the underlying reason of the hysteresis loop, i.e. alternating between two states (metastable switch).
+Back in 1971, Leon Chua, often referred to as the father of non-linear circuit theory, laid the mathematical foundation detailing the relations between the four fundamental circuit elements. Interestingly, at that time only three fundamental circuit elements had physical counterparts, namely resistors, capacitors and inductors. The fourth fundamental circuit element, the memristor, was only conceptualized in theory by Chua for the sake of symmetry (see figure \ref{fig:circuit_elements}). As outlined in Chua's seminal paper \textit{``Memristor-the missing circuit element''} \cite{chua_memristor}, the current-$I$ voltage-$V$ curve of a memristor has a unique shape, an IV-fingerprint if you will, in the form of a pinched hysteresis loop (see figure \ref{fig:pinched_hysteresis}). A hysteresis loop indicates that a system has an internal state (i.e. memory) which affects the output of the system and which depends on past inputs to the system \cite{memristor_hayes}. As famously state by Chua, \textit{``If it's pinched it's a memristor''} indicates that the hysteresis loop passes through the origin.
 
 \begin{figure}[htbp]
 	\begin{center}
@@ -26,25 +24,29 @@ Back in 1971, Leon Chua, often referred to as the father of non-linear circuit t
 \end{figure}
 \footnotetext{Original image (© Brian Hayes): \url{https://www.americanscientist.org/libraries/documents/201128120228377-2011-03CompScienceHayes.pdf}}
 
+\subsubsection{Artificial Synapses}
+
 % TODO: Continue from here.
 
 Several similarities have been identified between the properties of memristors and synapses, which make them interesting candidates for associative memory models; as further described in section \ref{sec:current_capabilities_memory_resistor}.
 
-% ref: Tim Molter HiPeac Prague 2016 Memristor Keynote
-%
-% Denser memory, faster read and write, lower energy use, non-volatile, and may represent continuous (i.e. not 0 and 1).
-%
-% How do we reach the power efficiency of a brain. "Don't simulate a brain, build a brain"
-%
-% We need to build a brain where the distance between memory and computation is 0.
-%
-% 1 billion fold discrepancy between current machine learning platforms and biological brains.
-%
-% We can operate on very low voltages because of the read and write phases that constantly repair relevant state.
+% +--- New paradigm
+% |
+% V
 
-% ref: Knowm Collaborates with Kris Campbell at BSU
+% ref: http://knowm.org/
 %
-% Continuous value stored as resistance in a memristor. breaking outside of the 0 and 1 box.
+% > ## New paradigm of computing
+% >
+% > The act of accessing memory is the act of processing.
+
+% +--- motivation behind AHaH nodes and new paradigm of computing.
+% |
+% V
+
+% ref: http://knowm.org/knowm-api/
+%
+% Every modern computing system currently separates memory and processing. This works well for many tasks, but it fails for large-scale adaptive systems like brains or large ML models like neural networks. Indeed, there is no system in Nature outside of modern human digital computers that actually separates memory and processing, so it’s a wonder we have been able to do as much as we have.
 
 % ref: http://knowm.org/
 %
@@ -53,10 +55,6 @@ Several similarities have been identified between the properties of memristors a
 % > Clear distinction between memory and processing.
 % > Shuttle information back and forth.
 % > Takes too long, requires too much energy.
-% >
-% > ## New paradigm of computing
-% >
-% > The act of accessing memory is the act of processing.
 
 % ref: https://www.youtube.com/watch?v=Tb2E-t11OH4 ("What is AHaH Computing?")
 %
@@ -65,6 +63,22 @@ Several similarities have been identified between the properties of memristors a
 % > Bring memory and processing closer together. Parallel computing.
 % >
 % > Reduce or eliminate the energy normally associated with computing those functions.
+
+% ref: https://www.youtube.com/watch?v=R7HxFhVQVr4 ("Why AHaH computing?")
+%
+% > Current digital computing platforms are billions of times less power and space efficient than biology (brains) for synaptic operations.
+% >
+% > It's physically not possible to reach biological level efficiency without significant changes in both architecture and technology.
+% >
+% > "GPU's will save us." `No they won't, they just suck less`
+% >
+% > If you insist on separating memory and computing, you won't even get close to the capacity of biology.
+% >
+% > Traditional computing would go an inch while biology is able to circle the world.
+
+% +--- Synapse consists of two memristors, competing.
+% |
+% V
 
 % ref: https://www.youtube.com/watch?v=IVDRcV8XvlI ("What is an AHaH node?")
 %
@@ -78,47 +92,34 @@ Several similarities have been identified between the properties of memristors a
 % >
 % > Understand how things self-organize.
 
-% ref: https://www.youtube.com/watch?v=R7HxFhVQVr4 ("Why AHaH computing?")
+% ref: http://knowm.org/knowm/
 %
-% > Current digital computing platforms are billions of times less power and space efficient than biology (brains) for synaptic operations.
-% >
-% > It's physically not possible to reach biological level efficiency without significant changes in both architecture and technology.
-% >
-% > "GPU's will save us." `No they won't, they just suck less`
-% >
-% > If you insist on separating memory and computing, you won't even get close to the capacity of biology.
-% >
-% > Traditional computing would go an inch while biology is able to circle the world.
-% >
-% > Effective intelligence.
+% A memristor is the electronic equivalent of an adaptive container!
+%
+% “Knowm's Synapse” or “Nature’s Transistor”. Two competing energy dissipation pathways.
+%
+% As a voltage (pressure) is applied to a memristor, its conductance will change.
+%
+% It is responsible for most self-organization on this planet. Nature is built of Knowms, including you.
+%
+% It is created when two energy dissipation pathways are competing for conduction resources. It appears to be at the heart of most self-organization.
+%
+% Knowm is built of a simple part repeated over and over again.
+%
+% When energy (for example water) flows through an adaptive container (for example dirt), the medium adapts or erodes in a particularly way that causes the energy to be dissipated faster. For example, the water erodes the ground and causes a channel to grow, which lowers the resistance to flow.
 
-% ref: https://www.youtube.com/watch?v=YOKr8n6Juhs ("Why is AHaH computing so efficient?")
+% +--- Evolve to solve problem
+% |
+% V
+
+% ref: https://youtu.be/dgbooumJ4Tg?t=1692
 %
-% > Communication is way faster in technology than biology. 1 sec football field, 1 sec 7 times around the world.
-% >
-% > Neuron body: 4000-100 000 nm
-% > Synapses: 500 nm
-% > Viruses: 400-40 nm
-% > Transistor: 28 nm
-% >
-% > If faster and smaller, why so inefficient?
-% >
-% > Currents naturally sum. The values are reduced to specific resistances.
-% >
-% > Memristor
-% >
-% > Measures the combined current.
-% >
-% > Memristors can radically reduce total communication distance for some problems (not all).
-% >
-% > Reduce voltage makes a big impact, since it's the voltage squared.
-% >
-% > E=(C*V^2)/2
-% >
-% > biology: 0.065V
-% > computer: 1.2 v (18x biology) 18^2 -> 324.
-% >
-% > Reduce the communication distance and voltage.
+% Won a nobel price. Eliol Prigoge.
+% There is a natural tendency for complex systems to minimize the energy consumption
+
+% +--- Mechanism for repair; inherent
+% |
+% V
 
 % ref: https://www.youtube.com/watch?v=ZBJX6zzwnRI ("The Adaptive power problem.")
 %
@@ -179,6 +180,18 @@ Several similarities have been identified between the properties of memristors a
 % > "Dissipation-driven adaptation of matter" - England
 % > "Energy dissipation pathways competing for conduction resources" as a mechanism.
 
+% +---
+% |
+% V
+
+% ref: https://www.youtube.com/watch?v=CFSrC7kjbJo ("Introduction to AHaH
+%
+% > XXX [ IMPORTANT ] XXX
+% >
+% > Synaptic access is processing is adaptation (memory and processing merged, d=0).
+% >
+% > XXX [/ IMPROTANT ] XXX
+
 % ref: https://www.youtube.com/watch?v=CFSrC7kjbJo ("Introduction to AHaH Computing, Alex Nugent, RIT, April 2015")
 %
 % > Focuses on self-organizational building blocks.
@@ -219,41 +232,15 @@ Several similarities have been identified between the properties of memristors a
 % > Nature has a universal adaptive building block.
 % >
 % > Interacting collectives of this building block solves the problems that the brain solves.
-% >
-% > memristors empower (not replace) our digital computers.
 
-% ref: https://youtu.be/dgbooumJ4Tg?t=1692
-%
-% Won a nobel price. Eliol Prigoge.
-% There is a natural tendency for complex systems to minimize the energy consumption
-
-% === [ Knowm Synapses ] ===
-
-%\subsubsection{AHaH Nodes}
-%\subsubsection{Knowm Synapses}
-
-% ref: http://knowm.org/knowm/
-%
-% A memristor is the electronic equivalent of an adaptive container!
-%
-% “Anti-Hebbian and Hebbian” in honour of Donald O. Hebb
-%
-% “Knowm's Synapse” or “Nature’s Transistor”. Two competing energy dissipation pathways.
-%
-% As a voltage (pressure) is applied to a memristor, its conductance will change.
-%
-% It is responsible for most self-organization on this planet. Nature is built of Knowms, including you.
-%
-% It is created when two energy dissipation pathways are competing for conduction resources. It appears to be at the heart of most self-organization.
-%
-% Knowm is built of a simple part repeated over and over again.
-%
-% When energy (for example water) flows through an adaptive container (for example dirt), the medium adapts or erodes in a particularly way that causes the energy to be dissipated faster. For example, the water erodes the ground and causes a channel to grow, which lowers the resistance to flow.
-%
-% ref: http://knowm.org/knowm-api/
-%
-% Every modern computing system currently separates memory and processing. This works well for many tasks, but it fails for large-scale adaptive systems like brains or large ML models like neural networks. Indeed, there is no system in Nature outside of modern human digital computers that actually separates memory and processing, so it’s a wonder we have been able to do as much as we have.
+% +--- Anti-Hebbian and Hebbian
+% |
+% V
 
 % ref: ref: http://knowm.org/report-from-the-navy-karles-invitational-on-neuro-electronics/
 %
 % Where each operation results in Anti-Hebbian or Hebbian learning. At the lowest level, Anti-Hebbian just means “move the synapse toward zero” and Hebbian means “move it away from zero”.
+
+% ref: http://knowm.org/knowm/
+%
+% “Anti-Hebbian and Hebbian” in honour of Donald O. Hebb
