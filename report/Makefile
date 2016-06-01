@@ -7,4 +7,4 @@ all: report.pdf
 .PHONY: clean
 
 clean:
-	rm -f *.aux *.log *.out *.toc *.bbl *.blg *.dvi *.rtf *.bcf *-blx.bib *.run.xml sections/*.aux
+	rm -f *.aux *.log *.out *.toc *.bbl *.blg *.dvi *.rtf *.bcf *-blx.bib *.run.xml sections/*.aux *.fdb_latexmk *.fls
