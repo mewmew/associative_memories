@@ -22,9 +22,23 @@ Back in 1971, Leon Chua, often referred to as the father of non-linear circuit t
 \end{figure}
 \footnotetext{Original image (© Brian Hayes): \url{https://www.americanscientist.org/libraries/documents/201128120228377-2011-03CompScienceHayes.pdf}}
 
-Ever since 2008, there has been an exponential increase in research related to memristors, where the number of search results for ``memristor'' on Google Scholar has doubled every 18-24 months \cite{memristors_a_new_frontier}. Why are so many researchers attracted to this new field, and what motivates such a profound investment of time and resources into this research?
+Ever since 2008, there has been an exponential increase in research related to memristors, where the number of search results for ``memristor'' on Google Scholar has doubled every 18-24 months \cite{memristors_a_new_frontier}. Why are so many researchers attracted to this new field of research? To answer this question, lets first evaluate the suitability of using current computer architectures in highly adaptive systems, such as brain-like learning systems with neural and synaptic placticity (i.e. adaptivity).
 
-% TODO: Discripancy between computers and biology in terms of energy efficiency when used for highly adaptive systems, such as a synaptic network.
+Machine learning research has managed to achieve some truly remarkable milestones in recent years (e.g. AlphaGo beating the human world champion in Go \cite{alphago}), both reaching and surpassing human potential on a number of tasks for which the brain is tailored towards, such as face recognition \cite{facenet}, classification, and abnormality detection. Given this resent development, it may be tempting to imagine that it is only a matter of time until these machines achieve general problem solving skills through highly adaptive learning, which is fundamental for general artificial intelligence.
+
+However, the very nature of adaptivity introduces a significant challenge for today's computer architectures as it is inherently dependent on mutable states to reflect changes in the environment. To model these changes in state, data has to be shuffled back and forth between the processor and memory. The separation of processing and memory access is the underlying cause of two significant problems with current computer architectures. Firstly, it restricts the potential for parallel computation \cite{net_doing_all_the_work} and introduces a set of complex workarounds (e.g. mutual exclusion, cache line invalidation). Secondly, and perhaps more importantly, a substantial amount of energy is required just to shuffle data back and forth between the processor and memory \cite{ahah}.
+
+There exist a huge discrepancy between the energy requirements of adaptive learning systems implemented in nature by biological brains and those implemented in silicon by machine learning algorithms running on von-Neumann computers. The difference in energy efficiency for adaptive learning tasks is estimated to be around 9 orders of magnitude. To put this into perspective, the brain would be able to travel around the entire earth on the same amount of energy that current computers would require to travel one and a half inches \cite{memristors_a_new_frontier}. This is one compelling reason why researchers are interested in understanding the inner workings of the brain, so that fundamental principles for energy efficient adaptive learning may be derived and modelled.
+
+%Current computer architectures are designed around major bottlenecks, huge amounts of data has to be shuffled back and forth to perform computations. Reaching its limits; transistors now so small that they only allow a single electron to pass through (similar in size to the ion channels). At this scale, problems arise when transistors may allow electrons to pass through, when they shouldn't and wise versa; which leads to unpredictable behaviour (small bursts of ones when should be be all zero, and wise versa.)
+
+
+% NOTE:
+% * Discripancy
+%    - Discripancy between computers and biology in terms of energy efficiency when used for highly adaptive systems, such as a synaptic network.
+% * Root cause
+%    - the adaptive power problem, von-Neumann bottleneck.
+% * Why are they interesting?
 
 % ref: Tim Molter HiPeac Prague 2016 Memristor Keynote
 %
